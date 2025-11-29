@@ -1,0 +1,5 @@
+import pyttsx3
+run = pyttsx3.init()
+text = input("Enter text to convert into speech: ")
+run.say(text)
+run.runAndWait()

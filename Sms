@@ -1,0 +1,15 @@
+pip install twilio
+from twilio.rest import Client
+
+account_sid = "YOURID"
+auth_token = "YOUR_AUTH_TOKEN"
+
+client = Client(account_sid,auth_token)
+
+message = client.messages.create(
+    body="Hello! This SMS is sent by Mohit",
+    from_="+916375416336",  # Twilio verified number
+    to="+919664010281"      # Receiver number
+)
+
+print("Successfully sent")

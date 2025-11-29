@@ -1,0 +1,7 @@
+import pywhatkit
+
+phone_number = "+91XXXXXXXXXX"
+
+message = "Hello!This is an automated message"
+
+pywhatkit.sendwhatmsg(phone_number, message, 16, 30)

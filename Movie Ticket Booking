@@ -1,0 +1,8 @@
+print("Welcome to Movie Ticket Booking System")
+
+age = int(input("Enter your age: "))
+
+if age >= 18:
+    print("You are allowed to book an adult movie ticket.Verify your ID proof!")
+else:
+    print("Sorry, you are not allowed to book an adult movie ticket.")

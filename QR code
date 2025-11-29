@@ -1,0 +1,28 @@
+pip install streamlit qrcode pillow
+import streamlit as st
+import qrcode
+from io import BytesIO
+
+st.set_page_config(page_title="QR Code Generator")
+
+st.title("QR Code Generator")
+
+text = st.text_input("Enter text or URL:")
+btn = st.button("Generate QR Code")
+
+if btn and text:
+    qr = qrcode.QRCode(version=1, box_size=10, border=4)
+    qr.add_data(text)
+    qr.make(fit=True)
+
+    img = qr.make_image(fill_color="black", back_color="white")
+    buf = BytesIO()
+    img.save(buf, format="PNG")
+    byte_img = buf.getvalue()
+    st.image(byte_img, caption="Your QR Code")
+    st.download_button(
+        label="Download QR Code",
+        data=byte_img,
+        file_name="qr_code.png",
+        mime="image/png"
+    )

@@ -1,0 +1,14 @@
+balance=5000
+pin=1234
+attempt=0
+user_pin=int(input("Enter the pin:"))
+if(user_pin==pin):
+    ask_amount=int(input("Enter the amount:"))
+    if(ask_amount<=balance):
+        balance=balance-ask_amount
+        print("withdrawl successful")
+        print("remaining balance is:",balance)
+    else:
+        print("insufficient amount")
+else:
+    print("Incorrect pin! Enter correct pin")
